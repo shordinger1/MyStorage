@@ -1,0 +1,13 @@
+S->AD
+A->BC
+B->cacac
+C->aaac
+D->EFGH
+E->a
+F->a
+G->cc
+H->cIc
+I->J
+J->abdecJ
+J->abdecK
+K->aec

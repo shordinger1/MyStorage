@@ -1,0 +1,121 @@
+#include<stdio.h> 
+
+"#" : seperator
+"include" : identifier
+"<" : operator
+"stdio" : identifier
+"." : operator
+"h" : identifier
+">" : operator
+int func(int a) 
+
+"int" : keyword
+"func" : identifier
+"(" : seperator
+"int" : keyword
+"a" : identifier
+")" : seperator
+{ 
+
+"{" : seperator
+    a = (1 + 2) * 3; 
+
+"a" : identifier
+"=" : operator
+"(" : seperator
+"1" : integer
+"+" : operator
+"2" : integer
+")" : seperator
+"*" : operator
+"3" : integer
+";" : seperator
+} 
+
+"}" : seperator
+# 6
+# 6
+include 2
+< 5
+stdio 2
+stdio 2
+. 5
+. 5
+h 2
+h 2
+> 5
+> 5
+int 7
+int 7
+func 2
+( 6
+(
+int 7
+a 2
+) 6
+)
+{ 6
+getting block: {
+a 2
+a 2
+= 5
+= 5
+getting expression
+( 6
+(:6
+1 3
+1:3
++ 5
++:5
+2 3
+2:3
+) 6
+):6
+* 5
+*:5
+3 3
+3:3
+; 6
+;:6
+} 6
+} 6
+END 0
+finished analyse
+
+program body {
+    macro include {
+        < identifier:stdio operator:. identifier:h operator:> >    }
+
+    value/function definition {
+        type definition id:func (function definition)(
+        type list {
+            type definition id:a        }
+
+        )
+        (function body) {
+            {
+            sentences {
+                identifier:a =
+                expression(value) {
+                    operator: ( expression operator: )
+                    expression {
+                        operator: +
+                        expression {
+                            1                        }
+
+                        expression {
+                            2                        }
+                    }
+
+                    expression {
+                        operator: * expression
+                        expression {
+                            3                        }
+                    }
+                }
+
+                seperator:}            }
+
+            }        }
+    }
+}
